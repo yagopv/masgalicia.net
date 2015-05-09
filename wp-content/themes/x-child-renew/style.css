@@ -28,6 +28,11 @@ body, a, h1, h2, h3, h4, h5, h6, p {
     .x-main {
         margin-bottom : 5em !important;
     }
+
+    .x-container.max {
+        margin: 0 auto;
+    }
+
 }
 
 .bg-primary {
