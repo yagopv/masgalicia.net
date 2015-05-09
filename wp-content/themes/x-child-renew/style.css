@@ -1,0 +1,482 @@
+/*
+
+Theme Name: X - Child Theme: Renew
+Theme URI: http://theme.co/x/
+Author: Themeco
+Author URI: http://theme.co/
+Description: Make all of your modifications to Renew in this child theme.
+Version: 1.0.0
+Template: x
+
+*/
+
+/* Mas Galicia Orange = #ff7418  rgba(255,116,24,1) */
+
+@import url( '../x/framework/css/site/stacks/renew.css' );
+
+html{
+    height: 100%;
+}
+
+body, a, h1, h2, h3, h4, h5, h6, p {
+	font-family : Arial,"Helvetica Neue",Helvetica,sans-serif;	
+    background-color: #ff6418;
+    letter-spacing: 0;
+}
+
+@media all and (min-width: 540px) {
+    .x-main {
+        margin-bottom : 5em !important;
+    }
+}
+
+.bg-primary {
+    background-color : 	#ff6418;
+}
+
+/* Deleted landmark for all the site */
+.x-header-landmark {
+    display : none;
+}
+
+/* Home */
+
+.site {
+	background : #ff6418;
+    min-height: 1000px;
+    max-width: 980px;
+}
+
+.home .site {
+    min-height : 0;
+}
+
+.x-navbar .mobile .x-nav li>a {
+    border: none;
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+@media all and (max-width : 784px) {
+    .site, .x-navbar.x-navbar-fixed-top.x-container-fluid.max.width {
+        width: 100% !important;
+    }
+
+    .x-iso-container {
+        margin: -3em;
+    }
+}
+
+.entry-wrap {
+	border : none !important;
+}
+
+.entry-header {
+	margin-top : 10px;	
+}
+
+.x-iso-container-posts.cols-3 .entry-title {
+    text-align: center;
+    font-size: 130%;
+}
+
+.entry-header .entry-title:before {
+	display : none;
+}
+
+.entry-content {
+    margin-top : 10px;	
+}
+
+.entry-featured img.wp-post-image,
+.entry-featured img.attachment-secondary-featured-thumbnail {
+	min-height : 200px;
+}
+
+@media all and (min-width : 600px) {
+    .entry-featured img.wp-post-image,
+    .entry-featured img.attachment-secondary-featured-thumbnail {
+	   min-height : 350px;	
+    }
+}
+
+@media all and (min-width : 768px) {
+    .entry-featured img.wp-post-image,
+    .entry-featured img.attachment-secondary-featured-thumbnail {
+	   min-height : 150px;	
+    }
+}
+
+.entry-featured {
+	border : 0;
+	background-color : #ff6418;
+	padding : 0;
+}
+
+/* Portada page */
+
+.home-featured #top.site {
+    background : none !important;
+}
+
+.home-featured .x-main.full {
+    margin-top: 35%;
+}
+
+.home-featured .x-container-fluid {
+    text-align : center;
+}
+
+.home-page #top.site {
+	background-color : #ff6418;
+	max-width : 780px !important;
+}
+
+.home-page .x-recent-posts a {
+	background-color : #ff6418;
+	border : none;
+}
+
+.home-page .x-recent-posts-date {
+	color : #000;
+}
+
+.home-page .x-colophon {
+	background-color : #ff6418;
+}
+
+@media all and (min-width : 600px) {
+    #home-logo {
+        height : 2em;
+    }
+}
+
+
+.x-iso-container-posts>.hentry .entry-wrap {
+	background-color : #ff6418;
+}
+
+
+.single .entry-wrap {
+    cursor : auto;
+}
+
+.single.single-post {
+   overflow-y: hidden;
+}
+
+.blog .entry-wrap-hovered,
+.archive .entry-wrap-hovered {
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+}
+
+.entry-wrap-hovered .entry-featured img:first-child {
+	opacity : 0;
+}
+
+.entry-wrap-hovered .entry-featured img:nth-child(2) {
+	opacity : 1;
+}
+
+.entry-wrap-hovered .entry-title a {
+	color : #FFF;
+}
+
+.entry-wrap .entry-content {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.entry-wrap-hovered .entry-content {
+	color : #FFF;
+}
+
+.x-navbar .x-nav > li > a:hover, .x-navbar .x-nav > li.sfHover > a, .x-navbar .x-nav > li.current-menu-item > a {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/* Change image thumbnails */
+.fade-image {
+	display: block;
+	position: relative;
+}
+
+.x-container-fluid.offset {
+    margin: .5em auto;
+}
+
+.pagination ul {
+    background-color: #ff6418;
+}
+
+.pagination a {
+    background-color: rgba(255,255,255,0.125);
+}
+
+.pagination a:hover {
+    background-color: rgba(255,255,255,0.3) !important;
+}
+
+.archive-custom-title p {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.archive-custom-title, .archive-custom-description {
+    color : #FFF;
+    width : 70%;
+    margin : 0 auto;
+    text-align: center;
+}
+
+.archive-custom-description {
+    margin-top : 4em;
+}
+
+.pagination {
+    margin: 4em 0 3.5em;
+}
+
+.archive .x-navbar-wrap, .single .x-navbar-wrap,
+.post-type-archive-cliente .x-navbar-wrap, .single .x-navbar-wrap {
+    display : none;
+}
+
+.entry-content.content {
+    margin-top : 2em;
+}
+
+.entry-content.content p,
+.entry-content.content h1,
+.entry-content.content h2,
+.entry-content.content h3,
+.entry-content.content h4,
+.entry-content.content h5,
+.entry-content.content h6 {
+    color : #FFF;
+}
+
+.rev_slider_wrapper {
+    margin-bottom : 3em !important;
+}
+
+.single .entry-header {
+    text-align : center;
+}
+
+.single .entry-header .entry-title {
+    color : #FFF;
+}
+
+.single span.divider {
+    text-align: center;
+    display: block;
+    color: #FFF;
+}
+
+.single .x-logobar-inner {
+    padding-bottom: 35px;
+}
+
+.archive.category .x-logobar-inner {
+    padding-bottom : 20px;
+}
+
+#category-info #category-name,
+#category-info #category-description > p {
+    text-align : center;
+    color : #FFF;
+}
+
+#category-info #category-name {
+    font-size : 1.5em;
+}
+
+#category-info #category-description {
+    width : 80%;
+    margin : 0 auto;
+}
+
+article {
+    cursor : pointer;
+}
+
+/* FORMS */
+
+.wpcf7 .ajax-loader {
+    display : none !important;
+}
+
+.wpcf7 input, .wpcf7 textarea {
+    border : none;
+    font-size : 1em;
+}
+
+.wpcf7 input[type=submit] {
+    background: #ff6418;
+    border : 1px solid #FFF;
+    width: 100%;
+    margin-top : 2em;
+}
+
+.wpcf7 input[type=submit]:focus {
+    outline: none;
+}
+
+.wpcf7 input[type=submit]:hover {
+    background: #ff6418;
+    border : 1px solid #000;
+}
+
+.wpcf7-help {
+    display: block;
+    text-align: right;
+    font-style: italic;
+}
+
+.wpcf7 .screen-reader-response {
+    display : none;
+}
+
+.wpcf7 .wpcf7-not-valid-tip {
+    color : rgb(202, 14, 14);
+}
+
+.wpcf7-response-output.wpcf7-mail-sent-ok {
+    border : 1px solid #306419;
+    color : #306419;
+    font-size : 1.2em;
+    background: #ff6418;
+}
+
+.wpcf7-response-output.wpcf7-validation-errors {
+    border : 1px solid rgb(202, 14, 14);
+    color : rgb(202, 14, 14);
+    font-size : 1.2em;
+    background: #ff6418;
+}
+
+
+/* Menus */
+
+@media all and (max-width : 979px) {
+    #menu-primary .menu-item a {
+        text-align: center;
+        font-size: 1em;
+    }
+}
+
+/* Brand and logos */
+
+.x-brand:hover, #home-logo:hover {
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+
+    transform : scale3d(1.1,1.1,1);
+    -webkit-transform : scale3d(1.1,1.1,1);
+    -moz-transform : scale3d(1.1,1.1,1);
+}
+
+/* Footer  styles */
+
+footer.x-colophon.bottom .x-nav li {
+    display : block;
+    border-bottom : 1px solid #000;
+    padding : .5em;
+}
+
+footer.x-colophon.bottom ul.x-nav li a {
+    color : #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size : 1.4em;
+}
+
+footer.x-colophon.bottom ul li a:hover {
+    color : #FFF;
+    text-transform: uppercase;
+    opacity: 1 !important;
+}
+
+.x-colophon.bottom .x-nav li:before {
+    content: "";
+}
+
+footer.x-colophon.top {
+    display : none;
+}
+
+footer.x-colophon.bottom {
+    width: 100%;
+}
+
+@media all and (min-width : 540px) {
+    footer.x-colophon.bottom {
+        position: fixed;
+        padding : 0;
+        bottom: 0;
+        background: #ff6418;
+        z-index: 999;
+        margin: 0 auto;
+        max-width : 980px;
+    }
+
+    footer.x-colophon.bottom ul.x-nav li:before {
+        content: "+";
+        float: left;
+        margin: 0 0.55em 0 0.45em;
+        opacity: 1;
+        color : #000;
+        font-weight: bold;
+        font-size : 1.2em;
+    }
+
+    footer.x-colophon.bottom ul.x-nav li{
+        display : inline-block;
+        border-bottom : none;
+        padding : 0;
+    }
+
+    footer.x-colophon.bottom ul.x-nav li a {
+        text-align: center;
+        font-size : 1.2em;
+    }
+}
+
+@media all and (min-width : 784px) {
+    footer.x-colophon.bottom {
+        width: 88%;
+    }
+}
+
+
+/* Helpers */
+.reset {
+    clear: left;
+}
+
+/* Keep loading hidden */
+#x-isotope-loading {
+    display:none !important;
+}
+
+/* Clientes */
+.page-clientes .x-navbar-wrap {
+    display: none;
+}
+
+.page-clientes .x-column {
+    height: 250px;
+}
+
+.page-clientes .x-img {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
