@@ -49,7 +49,8 @@ endif;
                 
                  <?php if (is_home()) { ?>
                     <?php $category = get_the_category(); ?>
-                    <?php if ($category[0]->category_parent == '0') { ?>                 
+                    <?php $showInFront = get_field("show-in-front"); ?>
+                    <?php if (($category[0]->category_parent == '0') && ($showInFront)) { ?>
                         <?php if ( $stack != 'ethos' ) : ?>
                             <?php x_get_view( $stack, 'content', get_post_format() ); ?>
                         <?php else : ?>
