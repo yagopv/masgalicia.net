@@ -27,6 +27,16 @@ function enqueue_custom_scripts() {
         wp_enqueue_script( 'splashjs' );
     }
 
+    if (is_page("clientes")) {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", false, null);
+        wp_enqueue_script('jquery');
+
+        wp_deregister_script('clientesjs');
+        wp_register_script( 'clientesjs', $get_template_directory_uri . '/js/clientes.js', array( 'jquery' ), NULL, true );
+        wp_enqueue_script( 'clientesjs' );
+    }
+
     if (is_home() || is_archive()) {
         wp_deregister_script('jquery');
         wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", false, null);

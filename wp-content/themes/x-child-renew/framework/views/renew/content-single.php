@@ -19,7 +19,9 @@
             </h1>
         </header>
         <span class="divider">__</span>
-        <?php x_get_view( 'renew', '_content', 'post-header' ); ?>
+        <div class="post-header">
+            <?php x_get_view( 'renew', '_content', 'post-header' ); ?>
+        </div>
         <?php x_get_view( 'global', '_content' ); ?>
     </div>
 </article>

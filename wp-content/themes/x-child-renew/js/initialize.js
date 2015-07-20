@@ -27,36 +27,35 @@ $(function() {
     if ($("body").hasClass("blog")) {
 	  $(".backstretch").empty();
 	  $.backstretch([
-	     "/wp-content/uploads/2015/04/carrusel-bici.jpg"
+	     "/wp-content/uploads/2015/07/carrusel-coronet-londres.jpg"
 	  ], {duration: 3000, fade: 750});        
     }
     
     if ($("body").hasClass("category-ediciones")) {
     	  $(".backstretch").empty();
     	  $.backstretch([
-              "/wp-content/uploads/2015/04/carrusel-news-SON.jpg",
-              "/wp-content/uploads/2015/04/carrusel-news-981.jpg"
+              "/wp-content/uploads/2015/07/carrusel-rbc.jpg"
     	  ], {duration: 3000, fade: 750});            
     }
     
     if ($("body").hasClass("category-producciones")) {
     	  $(".backstretch").empty();
     	  $.backstretch([
-    	      "/wp-content/uploads/2015/04/carrusel-news-981.jpg"
+    	      "/wp-content/uploads/2015/07/carrusel-teatro-lara.jpg"
     	  ], {duration: 3000, fade: 750});            
     }
     
      if ($("body").hasClass("category-branding")) {
     	  $(".backstretch").empty();
     	  $.backstretch([
-    	      "/wp-content/uploads/2015/04/carrusel-black-coupage2.jpg"
+    	      "/wp-content/uploads/2015/07/carrusel-xoel-y-pepe.jpg"
     	  ], {duration: 3000, fade: 750});            
     }
     
-     if ($("body").hasClass("category-hosteleria")) {
+     /*if ($("body").hasClass("category-hosteleria")) {
     	  $(".backstretch").empty();
     	  $.backstretch([
     	      "/wp-content/uploads/2015/04/carrusel-1906-pgm3.jpg"
     	  ], {duration: 3000, fade: 750});            
-     }           
+     } */
 });

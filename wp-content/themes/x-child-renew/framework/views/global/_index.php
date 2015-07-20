@@ -24,7 +24,7 @@ endif;
         
 <?php if ( is_archive() ) : $category = get_the_category(); ?>
     <div id="category-info">
-        <p id="category-name"><?php echo $category[0]->cat_name; ?></p>
+        <h4 id="category-name"><?php echo $category[0]->cat_name; ?></h4>
         <div id="category-description">
             <?php echo category_description(); ?>
         </div>
