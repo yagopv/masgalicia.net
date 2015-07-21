@@ -581,7 +581,6 @@ footer.x-colophon.bottom {
 }
 
 .page-clientes .x-column div {
-    display:table-cell;
     vertical-align: middle;
     text-align: center;
 }
