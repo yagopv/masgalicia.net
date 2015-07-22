@@ -580,9 +580,10 @@ footer.x-colophon.bottom {
     display: none;
 }
 
-.page-clientes .x-column div {
+.page-clientes .x-column div.img-wrapper {
     vertical-align: middle;
     text-align: center;
+    display: table-cell;
 }
 
 .page-clientes  #category-info #category-description > p {
