@@ -224,6 +224,11 @@ a, h1, h2, h3, h4, h5, h6 {
     cursor : auto;
 }
 
+.single .entry-wrap .entry-content.content p {
+    text-align: center;
+    margin: 0;
+}
+
 .single.single-post {
    overflow-y: hidden;
 }
@@ -556,6 +561,10 @@ footer.x-colophon.bottom {
 
 
 /* Soliloquy */
+
+.soliloquy-container {
+    margin-bottom: 4em !important;
+}
 
 .soliloquy-wrapper {
     border: 15px solid #FFF !important;
