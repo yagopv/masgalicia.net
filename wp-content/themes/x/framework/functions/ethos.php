@@ -242,7 +242,7 @@ if ( ! function_exists( 'x_ethos_featured_index' ) ) :
     ?>
 
       <a href="<?php the_permalink(); ?>" class="entry-thumb<?php echo $index_featured_layout_class; echo $index_featured_size_class; ?>" style="<?php echo x_ethos_entry_cover_background_image_style(); ?>">
-        <?php if ( $is_index_featured_layout ) : ?>  
+        <?php if ( $is_index_featured_layout ) : ?>
           <span class="featured-meta"><?php echo x_ethos_post_categories(); ?> / <?php echo get_the_date( 'F j, Y' ); ?></span>
           <h2 class="h-featured"><span><?php x_the_alternate_title(); ?></span></h2>
           <span class="featured-view"><?php _e( 'View Post', '__x__' ); ?></span>
@@ -265,16 +265,18 @@ if ( ! function_exists( 'x_ethos_post_categories' ) ) :
   function x_ethos_post_categories() {
 
     $categories      = get_the_terms( get_the_ID(), 'category' );
-    $separator       = ', ';
-    $categories_list = '';
+    $categories_list = array();
 
-    foreach ( $categories as $category ) {
-      $categories_list .= $category->name . $separator;
+
+    if ( ! is_array( $categories ) ) {
+      return '';
     }
 
-    $categories_output = trim( $categories_list, $separator );
+    foreach ( $categories as $category ) {
+      $categories_list[] = $category->name;
+    }
 
-    return $categories_output;
+    return implode( ', ', $categories_list );
 
   }
 endif;

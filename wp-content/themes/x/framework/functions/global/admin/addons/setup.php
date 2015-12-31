@@ -16,6 +16,7 @@
 //   05. Setup Menu
 //   06. Activation Redirect
 //   07. Add Extensions Link to "Add Plugins" Page
+//   08. Setup Demo Importer
 // =============================================================================
 
 // Set Path
@@ -70,7 +71,10 @@ require_once( $addn_path . '/page-customizer-manager.php' );
 require_once( $addn_path . '/page-demo-content.php' );
 require_once( $addn_path . '/page-product-validation.php' );
 require_once( $addn_path . '/page-extensions.php' );
-require_once( $addn_path . '/demo/ajax-handler.php' );
+require_once( $addn_path . '/demo/legacy/ajax-handler.php' );
+require_once( $addn_path . '/demo/class-x-demo-import-session.php' );
+require_once( $addn_path . '/demo/class-x-demo-import-registry.php' );
+require_once( $addn_path . '/demo/class-x-demo-import-processor.php' );
 
 
 
@@ -117,3 +121,10 @@ function x_addons_add_plugins_extensions_link( $views ) {
 }
 
 add_filter( 'views_plugin-install', 'x_addons_add_plugins_extensions_link' );
+
+
+
+// Setup Demo Importer
+// =============================================================================
+
+X_Demo_Import_Session::instance();

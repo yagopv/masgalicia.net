@@ -18,41 +18,49 @@
 
 function x_demo_content_setup_ajax_callback() {
 
+  // Uncomment to simulate a timeout
+  // header("HTTP/1.0 408 Request Timeout"); die();
+
   //
   // Get API data.
   //
 
-  $demo    = $_GET['demo'];
-  $request = wp_remote_get( 'https://theme.co/x/member/demo-api/' . $demo . '/' );
+  $errorMessage = __( 'We&apos;re sorry, the demo failed to finish importing.', '__x__' );
 
+  if ( !isset( $_POST['demo'] ) )
+    wp_send_json_error( array( 'message' => $errorMessage, 'debug_message' => 'POST data missing demo.' ) );
+
+  $request = wp_remote_get( $_POST['demo'] );
+
+  if ( is_wp_error( $request ) )
+    wp_send_json_error( array( 'message' => $errorMessage, 'debug_message' => $request->get_error_message() ) );
 
   //
-  // Check if request returns an error.
+  // API data.
   //
 
-  if ( is_wp_error( $request ) ) {
+  $data = json_decode( $request['body'], true );
 
-    echo json_encode( array(
-      'result'  => 'error',
-      'message' => $request->get_error_message()
-    ) );
-
-    die( 0 );
-
-  }
+  if ( !is_array( $data ) )
+    wp_send_json_error( array( 'message' => $errorMessage, 'debug_message' => 'Requested demo is improperly formatted.' ) );
 
 
   //
   // Run demo setup.
   //
 
-  require_once( 'setup.php' );
+  $error = false;
 
-  echo json_encode( array(
-    'result' => 'success'
-  ) );
+  ob_start();
 
-  die( 0 );
+  include_once( 'setup.php' );
+
+  if ( $error !== false )
+    wp_send_json_error( array( 'message' => $errorMessage, 'debug_message' => $error, 'buffer' => ob_get_clean() ) );
+
+  ob_clean();
+
+  wp_send_json_success();
 
 }
 

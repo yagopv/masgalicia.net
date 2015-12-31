@@ -133,6 +133,9 @@ class X_Plugin_Updater {
       }
     }
 
+    // Clear addon list cache
+    delete_site_option( 'x_addon_list_cache' );
+
     return $data;
 
   }
@@ -240,7 +243,7 @@ class X_Plugin_Updater {
 
 
       //
-      // Fires at the end of the update message container in each row of the 
+      // Fires at the end of the update message container in each row of the
       // plugins list table.
       //
       // The dymaic portion of the hook name, $file, refers to the path of

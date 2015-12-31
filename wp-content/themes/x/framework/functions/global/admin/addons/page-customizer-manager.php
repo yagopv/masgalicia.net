@@ -66,6 +66,7 @@ function x_addons_customizer_import_functionality() {
         foreach ( $options as $key => $value ) {
           update_option( $key, $value );
         }
+        x_bust_google_fonts_cache();
         echo '<div class="updated"><p><strong>Huzzah!</strong> All Customizer settings were successfully restored!</p></div>';
       } else {
         echo '<div class="error"><p><strong>Uh oh.</strong> Invalid file type provided or file size too big. Please try again.</p></div>';
@@ -103,13 +104,14 @@ function x_addons_customizer_manager_import_output() { ?>
 
 function x_addons_customizer_export_functionality() {
 
+  GLOBAL $customizer_settings_data;
+
   $blogname  = strtolower( str_replace( ' ', '-', get_option( 'blogname' ) ) );
   $file_name = $blogname . '-xcs';
-  $options   = x_customizer_options_list();
 
-  foreach ( $options as $key ) {
-    $value      = maybe_unserialize( get_option( $key ) );
-    $data[$key] = $value;
+  foreach ( $customizer_settings_data as $option => $default ) {
+    $value         = maybe_unserialize( get_option( $option ) );
+    $data[$option] = $value;
   }
 
   $json_data = json_encode( $data );
@@ -172,11 +174,13 @@ function x_addons_customizer_reset_functionality() {
 
   if ( isset( $_POST['reset'] ) && check_admin_referer( 'x-addons-customizer-manager-reset' ) ) {
 
-    $options = x_customizer_options_list();
+    GLOBAL $customizer_settings_data;
 
-    foreach ( $options as $option ) {
+    foreach ( $customizer_settings_data as $option => $default ) {
       delete_option( $option );
     }
+
+    x_bust_google_fonts_cache();
 
     echo '<div class="updated"><p>All Customizer settings were successfully reset.</p></div>';
 

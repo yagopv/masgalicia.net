@@ -50,24 +50,24 @@ function x_create_meta_box( $post, $meta_box ) {
   if ( isset( $meta_box['description'] ) && $meta_box['description'] != '' )
     echo '<p>' . $meta_box['description'] . '</p>';
     
-  wp_nonce_field( basename(__FILE__), 'x_meta_box_nonce' );
+  wp_nonce_field( basename( __FILE__ ), 'x_meta_box_nonce' );
 
   echo '<table class="form-table x-form-table">';
  
   foreach( $meta_box['fields'] as $field ) {
 
-    $meta = get_post_meta( $post->ID, $field['id'], true );
+    $meta = ( $post->post_status == 'auto-draft' ) ? $field['std'] : get_post_meta( $post->ID, $field['id'], true );
 
     echo '<tr><th><label for="' . $field['id'] . '"><strong>' . $field['name'] . '</strong>
         <span>' . $field['desc'] . '</span></label></th>';
     
     switch( $field['type'] ) {  
       case 'text':
-        echo '<td><input type="text" name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" value="' . ( $meta ? $meta : $field['std'] ) . '" size="30" /></td>';
+        echo '<td><input type="text" name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" value="' . $meta . '" size="30" /></td>';
         break;
         
       case 'textarea' :
-        echo '<td><textarea name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" rows="8" cols="5">' . ( $meta ? $meta : $field['std'] ) . '</textarea></td>';
+        echo '<td><textarea name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" rows="8" cols="5">' . $meta . '</textarea></td>';
         break;
 
       case 'select' :
@@ -114,11 +114,11 @@ function x_create_meta_box( $post, $meta_box ) {
         break;
 
       case 'color':
-        echo '<td><input type="text" name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" class="wp-color-picker" value="' . ( $meta ? $meta : $field['std'] ) . '" data-default-color="' . $field['std'] . '" size="30" /></td>';
+        echo '<td><input type="text" name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" class="wp-color-picker" value="' . $meta . '" data-default-color="' . $field['std'] . '" size="30" /></td>';
         break;
 
       case 'file':
-        echo '<td><input type="text" name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" value="' . ( $meta ? $meta : $field['std'] ) . '" size="30" class="file" /> <input type="button" class="button" name="'. $field['id'] .'_button" id="'. $field['id'] .'_button" value="Browse" /></td>';
+        echo '<td><input type="text" name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" value="' . $meta . '" size="30" class="file" /> <input type="button" class="button" name="'. $field['id'] .'_button" id="'. $field['id'] .'_button" value="Browse" /></td>';
         break;
 
       case 'images':
@@ -135,7 +135,7 @@ function x_create_meta_box( $post, $meta_box ) {
           }
         }
         echo '<td>'
-             . '<input type="text" name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" value="' . ( $meta ? $meta : $field['std'] ) . '" class="file" />'
+             . '<input type="text" name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '" value="' . $meta . '" class="file" />'
              . '<input data-id="' . get_the_ID() . '"  type="button" class="button" name="' . $field['id'] . '_button" id="' . $field['id'] . '_upload" value="Select Background Image(s)" />'
              . '<div class="x-meta-box-img-thumb-wrap">' . $output . '</div>'
            . '</td>';
@@ -280,18 +280,15 @@ function x_create_meta_box( $post, $meta_box ) {
         break;
 
       case 'sliders' :
-        $rev_slider = new RevSlider();
-        $sliders    = $rev_slider->getArrSliders();
+        $sliders = apply_filters( 'x_sliders_meta', array() );
         echo '<td><select name="x_meta[' . $field['id'] . ']" id="' . $field['id'] . '">';
-        echo '<option>Deactivated</option>';
-        foreach ( $sliders as $slider ) {
-          echo '<option';
+        echo '<option value="Deactivated">Deactivated</option>';
+        foreach ( $sliders as $key => $value ) {
+          echo '<option value="' . $key . '"';
           if ( $meta ) {
-            if ( $meta == $slider->getAlias() ) echo ' selected="selected"';
-          } else {
-            if ( $field['std'] == $slider->getAlias() ) echo ' selected="selected"';
+            if ( $meta == $key || $meta == $value['slug'] ) echo ' selected="selected"';
           }
-          echo '>' . $slider->getAlias() . '</option>';
+          echo '>' . $value['source'] . ': ' . $value['name'] . '</option>';
         }
         echo '</select></td>';
         break;

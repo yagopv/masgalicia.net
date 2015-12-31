@@ -28,7 +28,7 @@ class X_Update_API {
   // The update URL base.
   //
 
-  private static $api_url = 'https://theme.co/x/member/wp-admin/admin-ajax.php';
+  private static $base_url = 'https://community.theme.co/api-v1/';
 
 
   //
@@ -41,6 +41,11 @@ class X_Update_API {
 
     add_action( 'init', array( $this, 'init' ) );
     add_action( 'upgrader_pre_download', array( $this, 'upgrader_screen_message' ), 10, 3 );
+
+    if ( defined('THEMECO_PRERELEASES') && THEMECO_PRERELEASES ) {
+    	add_filter( 'x_update_product_slug', array( $this, 'enable_pre_release_updates' ) );
+    	add_filter( 'x_update_response_data', array( $this, 'filter_pre_release_data' ) );
+    }
   }
 
 
@@ -61,6 +66,32 @@ class X_Update_API {
 
   }
 
+  public function enable_pre_release_updates( $slug ) {
+  	if ( 'x-the-theme' == $slug || 'cornerstone' == $slug ) {
+  		$slug .= '-edge';
+  	}
+  	return $slug;
+  }
+
+  public function filter_pre_release_data( $data ) {
+
+  	if ( isset( $data['slug'] ) && strpos( $data['slug'], '-edge' ) !== false ) {
+  		$data['slug'] = str_replace('-edge', '', $data['slug']);
+
+  	}
+
+  	if ( isset( $data['products'] ) ) {
+  		foreach ($data['products'] as $key => $value) {
+  			if ( isset( $value['slug'] ) && strpos( $value['slug'], '-edge' ) !== false ) {
+  				$value['slug'] = str_replace( '-edge', '', $value['slug']);
+		  		$data['products'][$value['slug']] = $value;
+		  		unset($data['products'][$key]);
+		  	}
+  		}
+  	}
+
+  	return $data;
+  }
 
   //
   // Request information from the remote update API. The $args input is an
@@ -70,27 +101,45 @@ class X_Update_API {
   public static function remote_request( $args ) {
 
     $name    = x_addons_get_api_key_option_name();
-    $api_key = strip_tags( get_option( $name ) );
+    $api_key = esc_attr( get_option( $name ) );
 
-    ( $api_key == '' ) ? $api_key = 'unverified' : false;
+    if ( $api_key == '' )
+      $api_key = 'unverified';
 
-    $url = add_query_arg(
-      wp_parse_args( $args, array(
-        'action'  => 'autoupdates',
-        'api-key' => $api_key,
-        'siteurl' => urlencode( network_site_url() )
-      )
-    ), self::$api_url );
+    $args = wp_parse_args( $args, array(
+      'action'   => 'autoupdates',
+      'api-key'  => $api_key,
+      'siteurl'  => preg_replace( '#(https?:)?//#','', esc_attr( untrailingslashit( network_home_url() ) ) ),
+      'xversion' => X_VERSION
+    ) );
 
-    $request          = wp_remote_get( $url );
-    $connection_error = array( 'code' => 4, 'message' => __( 'Could not establish connection. Please ensure your firewall is not blocking requests to <strong>theme.co</strong>', '__x__' ) );
+    if ( isset( $args['product'] ) )
+    	$args['product'] = apply_filters( 'x_update_product_slug', $args['product'] );
 
-    if ( is_wp_error( $request ) ) {
+    if ( isset( $args['products'] ) ) {
+    	foreach ($args['products'] as $key => $slug ) {
+    		$args['products'][$key] = apply_filters( 'x_update_product_slug', $slug );
+    	}
+
+    	$args['products'] = base64_encode( serialize( $args['products'] ) );
+    }
+
+    $request_url = self::$base_url . trailingslashit( $args['action'] ) . trailingslashit( $args['api-key'] );
+
+    unset($args['action']);
+    unset($args['api-key']);
+
+    $uri = add_query_arg( $args, $request_url );
+
+    $request = wp_remote_get( $uri, array( 'timeout' => 15 ) );
+    $connection_error = array( 'code' => 4, 'message' => __( 'Could not establish connection. For assistance, please start by reviewing our article on troubleshooting <a href="https://community.theme.co/kb/connection-issues/">connection issues.</a>', '__x__' ) );
+
+    if ( is_wp_error( $request ) || $request['response']['code'] != 200 ) {
       self::store_error( $request );
       return $connection_error;
     }
 
-    $data = json_decode( $request['body'], true );
+    $data = apply_filters( 'x_update_response_data', json_decode( $request['body'], true ) );
 
     if ( ! isset( $data['code'] ) ) {
       return $connection_error;
@@ -102,7 +151,7 @@ class X_Update_API {
 
     if ( $api_key != '' && $data['code'] == 3 ) {
       delete_option( $name );
-      delete_transient( 'x_addon_list_cache' );
+      delete_site_option( 'x_addon_list_cache' );
     }
 
     return $data;
@@ -119,7 +168,7 @@ class X_Update_API {
   //
 
   public static function validate_key( $key ) {
-    return self::remote_request( array( 'api-key' => strip_tags( $key ), 'product' => 'x-the-theme' ) );
+    return self::remote_request( array( 'api-key' => esc_attr( $key ), 'product' => 'x-the-theme' ) );
   }
 
 
@@ -132,7 +181,7 @@ class X_Update_API {
   }
 
   public static function get_products( $slugs ) {
-    return self::remote_request( array( 'products' => base64_encode( serialize( $slugs ) ) ) );
+    return self::remote_request( array( 'products' => $slugs ) );
   }
 
 
@@ -190,15 +239,15 @@ class X_Update_API {
 
   public static function get_cached_addons() {
 
-    if ( false === ( $addons = get_transient( 'x_addon_list_cache' ) ) ) {
+    if ( false === ( $addons = get_site_option( 'x_addon_list_cache', false ) ) ) {
 
       $request = self::list_addons();
 
-      $error = array( 'error' => true, 'message' => __( 'Could not retrieve extensions list. Please ensure your firewall is not blocking requests to <strong>theme.co</strong>.', '__x__' ) );
+      $error = array( 'error' => true, 'message' => __( 'Could not retrieve extensions list. For assistance, please start by reviewing our article on troubleshooting <a href="https://community.theme.co/kb/connection-issues/">connection issues.</a>', '__x__' ) );
 
       $addons = ( isset( $request['addons'] ) ) ? $request['addons'] : $error;
 
-      set_transient( 'x_addon_list_cache', $addons, 3600 * 12 );
+      update_site_option( 'x_addon_list_cache', $addons );
 
     }
 

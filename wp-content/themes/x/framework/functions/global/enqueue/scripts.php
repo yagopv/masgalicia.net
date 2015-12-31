@@ -69,29 +69,27 @@ if ( ! function_exists( 'x_enqueue_post_meta_scripts' ) ) :
       wp_enqueue_script( 'x-customizer-admin-js', X_TEMPLATE_URL . '/framework/js/dist/admin/x-customizer-admin.min.js', array( 'jquery' ), X_VERSION, true );
     }
 
-    // if ( strpos( $hook, 'x-addons-demo-content' ) != false ) {
+    if ( strpos( $hook, 'x-addons-demo-content' ) != false ) {
 
-    //   wp_register_script( 'x-demo-content-admin-js', X_TEMPLATE_URL . '/framework/js/dist/admin/x-demo-content-admin.min.js', array( 'jquery' ), X_VERSION, true );
+      wp_register_script( 'x-demo-content-admin-js', X_TEMPLATE_URL . '/framework/js/dist/admin/x-demo-content-admin.min.js', array( 'jquery' ), X_VERSION, true );
 
-    //   wp_localize_script( 'x-demo-content-admin-js', 'xDemoContent', array(
-    //     'start'     => __( 'Let&apos;s get started!', '__x__' ),
-    //     'complete'  => __( 'Have fun!', '__x__' ),
-    //     'simulated' => __( 'Working on it...', '__x__' ),
-    //     'confirm'   => __( 'Installing demo content will not alter any of your pages or posts, but it will overwrite your Customizer settings. This is not reversible unless you have previously made a backup of your settings. Are you sure you want to proceed?', '__x__' ),
-    //     'standard'  => array(
-    //       'button'  => __( 'Setup Standard Demo: %s', '__x__' ),
-    //       'timeout' => __( 'Hang in there, we&apos;re almost done...', '__x__' ),
-    //     ),
-    //     'expanded' => array(
-    //       'button'  => __( 'Setup Expanded Demo: %s', '__x__' ),
-    //       'timeout' => __( 'Connection timeout. Retrying... (%s attempts)', '__x__' ),
-    //       'failure' => __( 'We&apos;re sorry, the demo failed to finish importing.', '__x__' ),
-    //     )
-    //   ) );
+      wp_localize_script( 'x-demo-content-admin-js', 'xDemoContent', array(
+        'debug'          => ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ),
+        'start'          => __( 'Let&apos;s get started!', '__x__' ),
+        'complete'       => __( 'Have fun!', '__x__' ),
+        'simulated'      => __( 'Working on it...', '__x__' ),
+        'confirm'        => __( 'Installing demo content will not alter any of your pages or posts, but it will overwrite your Customizer settings. This is not reversible unless you have previously made a backup of your settings. Are you sure you want to proceed?', '__x__' ),
+        'timeout1'       => __( 'Working on it...', '__x__' ),
+        'timeout2'       => __( 'Hang in there, trying to reconnect...', '__x__' ),
+        'timeout3'       => __( 'Experiencing technical difficulties...', '__x__' ),
+        'failure'        => __( 'We&apos;re sorry, the demo failed to finish importing.', '__x__' ),
+        'buttonStandard' => __( 'Setup Standard Demo: %s', '__x__' ),
+        'buttonExpanded' => __( 'Setup Expanded Demo: %s', '__x__' ),
+      ) );
 
-    //   wp_enqueue_script( 'x-demo-content-admin-js' );
+      wp_enqueue_script( 'x-demo-content-admin-js' );
 
-    // }
+    }
 
     if ( $hook == 'widgets.php' ) {
       wp_enqueue_script( 'x-widgets-js', X_TEMPLATE_URL . '/framework/js/dist/admin/x-widgets.min.js', array( 'jquery' ), X_VERSION, true );
@@ -121,7 +119,13 @@ endif;
 if ( ! function_exists( 'x_enqueue_customizer_controls_scripts' ) ) :
   function x_enqueue_customizer_controls_scripts() {
 
-    wp_enqueue_script( 'x-customizer-controls-js', X_TEMPLATE_URL . '/framework/js/dist/admin/x-customizer-controls.min.js', array( 'jquery' ), X_VERSION, true );
+    wp_register_script( 'x-customizer-controls-js', X_TEMPLATE_URL . '/framework/js/dist/admin/x-customizer-controls.min.js', array( 'jquery' ), X_VERSION, true );
+
+    wp_localize_script( 'x-customizer-controls-js', 'x_customizer_controls_data', array(
+      'x_fonts_data' => x_fonts_data()
+    ) );
+
+    wp_enqueue_script( 'x-customizer-controls-js' );
 
   }
   add_action( 'customize_controls_print_footer_scripts', 'x_enqueue_customizer_controls_scripts' );
@@ -137,9 +141,9 @@ if ( ! function_exists( 'x_enqueue_customizer_preview_scripts' ) ) :
 
     wp_register_script( 'x-customizer-preview-js', X_TEMPLATE_URL . '/framework/js/dist/admin/x-customizer-preview.min.js', array( 'jquery', 'customize-preview', 'heartbeat' ), X_VERSION, true );
 
-    wp_localize_script( 'x-customizer-preview-js', 'x_customizer_data', array(
-      'woocommerce_is_active' => X_WOOCOMMERCE_IS_ACTIVE
-    ));
+    wp_localize_script( 'x-customizer-preview-js', 'x_customizer_preview_data', array(
+      'x_woocommerce_is_active' => X_WOOCOMMERCE_IS_ACTIVE
+    ) );
 
     wp_enqueue_script( 'x-customizer-preview-js' );
 

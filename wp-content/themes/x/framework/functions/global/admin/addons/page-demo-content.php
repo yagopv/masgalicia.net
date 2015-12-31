@@ -16,221 +16,178 @@
 // Page Output
 // =============================================================================
 
-function x_addons_page_demo_content() { ?>
+function x_addons_page_demo_content() {
+
+  $data = x_addons_page_demo_content_setup();
+
+  extract( $data );
+
+  $standard_first = current( $standard_demos );
+  $expanded_first = current( $expanded_demos );
+
+  ?>
 
   <div class="wrap x-addons-demo-content">
 
+    <?php if ( isset( $_GET['clean-cache'] ) ) : ?>
+      <div class="notice updated"><p><?php _e( 'Demo content cache has been cleared. All imported content will be considered new.', '__x__' ); ?></p></div>
+    <?php endif; ?>
+
     <header class="x-addons-header">
-      <h2>Demo Content</h2>
-      <p>Setup demo content with the click of a mouse (or two). <a href="//theme.co/x/member/demo-content/" target="_blank">Learn More</a>.</p>
+      <h2><?php _e( 'Demo Content', '__x__' ); ?></h2>
+      <p><?php _e( 'Quick start the design process with our Standard and Expanded demos. <a href="https://community.theme.co/kb/demo-content/" target="_blank">Learn More</a>.', '__x__' ); ?></p>
     </header>
 
+    <div class="message"></div>
+
     <div class="x-addons-postboxes">
-      <?php x_addons_demo_content_output(); ?>
+
+      <?php if ( isset( $error ) && is_string( $error ) ) : ?>
+
+        <div class="x-addons-postbox demo-content">
+          <div class="error"><p><?php echo $error ?></p></div>
+        </div>
+
+      <?php else : ?>
+
+        <div class="x-addons-postbox demo-content">
+          <div class="inside">
+            <form id="x-demo-content-form" method="post">
+
+              <input type="hidden" name="demo_type" value="standard" />
+              <?php wp_nonce_field( 'x-addons-demo-content' ); ?>
+
+              <div class="content-container">
+
+                <div class="content standard selected">
+                  <div class="content-inner">
+                    <h3><?php _e( 'Standard', '__x__' ); ?></h3>
+                    <p>Standard demo content will setup the Customizer settings and homepage design with placeholder content for the demo you select. Additionally, you can include optional example posts or portfolio items to see how certain features work.</p>
+                    <select name="standard-demo" class="x-demo-select">
+                      <?php foreach ( $standard_demos as $key => $info ) : ?>
+                        <option data-demo-url="<?php echo $info['demo_url']; ?>" value="<?php echo $info['url']; ?>"><?php echo $info['title']; ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                    <a href="<?php echo $standard_first['demo_url']; ?>" class="demo-content-link" target="_blank"><span>Demo</span></a>
+                    <fieldset>
+                      <legend class="screen-reader-text"><span>Import Posts</span></legend>
+                      <label for="standard-demo-posts">
+                        <input name="standard-demo-posts" type="checkbox" id="standard-demo-posts" value="1">
+                        <span>Import Posts</span>
+                      </label>
+                    </fieldset>
+                    <fieldset>
+                      <legend class="screen-reader-text"><span>Import Portfolio Items</span></legend>
+                      <label for="standard-demo-portfolio-items">
+                        <input name="standard-demo-portfolio-items" type="checkbox" id="standard-demo-portfolio-items" value="1">
+                        <span>Import Portfolio Items</span>
+                      </label>
+                    </fieldset>
+                  </div>
+                </div>
+
+                <div class="content expanded">
+                  <div class="content-inner">
+                    <h3><?php _e( 'Expanded', '__x__' ); ?></h3>
+                    <p>Our Expanded Demos allow you to setup complete sites with the click of a mouse! Everything from the customizer settings, to pages with full graphics are implemented for you, giving you ready-made designs in an instant.</p>
+                    <select name="expanded-demo" class="x-demo-select">
+                      <?php foreach ( $expanded_demos as $name => $info ) : ?>
+                        <option data-demo-url="<?php echo $info['demo_url']; ?>" value="<?php echo $name; ?>"><?php echo $info['title']; ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                    <a href="<?php echo $expanded_first['demo_url']; ?>" class="demo-content-link" target="_blank"><span>Demo</span></a>
+                  </div>
+                </div>
+
+              </div>
+
+              <p class="submit">
+                <input type="submit" name="setup" id="x-addons-demo-content-submit" class="button button-primary" value="<?php printf( __( 'Setup Standard Demo: %s', '__x__' ), $standard_first['title'] ); ?>">
+              </p>
+
+            </form>
+          </div>
+        </div>
+
+        <?php
+
+        $troubleshooting_info = '<p>While our Standard and Expanded demo content can be used any time, it is recommended for use on new installations as a starting point. <a href="https://theme.co/go/join-demodashboard.php" target="_blank">Purchase another license</a>.</p>'
+                              . '<p>If you feel you have run into a problem, check out our <a href="https://community.theme.co/kb/demo-content/#troubleshooting" target="_blank">troubleshooting tips</a>.</p>';
+
+        if ( ! X_REVOLUTION_SLIDER_IS_ACTIVE ) {
+          $troubleshooting_info .= '<p><strong>Please note:</strong> Since Revolution Slider is not currently active, any sliders used in our Expanded demos will not be setup. If you wish for these sliders to be setup, please ensure that you have Revolution Slider installed and activated.</p>';
+        }
+
+        ?>
+
+        <div class="troubleshooting"><?php echo $troubleshooting_info; ?></div>
+
+      <?php endif; ?>
+
     </div>
 
   </div>
 
-<?php }
+<?php
+
+}
 
 
 
 // Setup
 // =============================================================================
 
-function x_addons_demo_content_output() {
+function x_addons_page_demo_content_setup() {
 
-  $request = wp_remote_get( 'https://theme.co/x/member/demo-api/' );
+  $data = array();
+
+  if ( isset( $_GET['clean-cache'] ) ) {
+    delete_option( 'x_demo_importer_registry' );
+    delete_transient( 'x_demo_listing' );
+  }
+
+  //
+  // Try restoring from transient first
+  //
+
+  $transient = get_transient( 'x_demo_listing' );
+  if ( false !== $transient )
+    return $transient;
+
+
+  //
+  // Get Remote demo list
+  //
+
+  $request = wp_remote_get( 'http://themeco-demo-content.s3.amazonaws.com/x/' . apply_filters( 'x_demo_listing_index', 'index' ) . '.json' );
+
 
   //
   // Check if request returns an error.
   //
 
-  if ( is_wp_error( $request ) ) :
+  if ( is_wp_error( $request ) ) {
 
     if ( isset( $_GET['x-verbose'] ) && $_GET['x-verbose'] == 1 ) {
       x_dump( $request->get_error_message(), 350, 'var_dump' );
     }
 
-    ?>
+    $data['error'] = __( 'Unable to retrieve demo content. Your WordPress install may be having issues making outbound HTTP requests. For more information, please review the <a href="https://theme.co/community/kb/connection-issues/">connection issues</a> article in our Knowledge Base.', '__x__' );
+    return $data;
+  }
 
-    <div class="x-addons-postbox demo-content">
-      <div class="error"><p>Unable to retrieve demo content. A firewall may be blocking connections to theme.co.</p></div>
-    </div>
+  $response = json_decode( $request['body'], true );
 
-    <?php
+  if ( is_array($response) && isset( $response['standard'] ) && isset( $response['expanded'] ) && !empty( $response['standard'] ) && !empty( $response['expanded'] ) ) {
+    $data['standard_demos'] = $response['standard'];
+    $data['expanded_demos'] = $response['expanded'];
+    set_transient( 'x_demo_listing', $data, 12 * HOUR_IN_SECONDS );
+  } else {
+    $data['standard_demos'] = array( 'undefined' => array( 'title' => '', 'url' => '' ) );
+    $data['expanded_demos'] = $data['standard_demos'];
+    $data['error'] = __( 'No demos found. Refreshing this page may resolve the issue. If it persists, please review the <a href="https://theme.co/community/kb/connection-issues/">connection issues</a> article in our Knowledge Base.', '__x__' );
+  }
 
-  else :
-
-    $data = json_decode( $request['body'], true );
-
-  ?>
-
-  <div class="x-addons-postbox demo-content">
-    <div class="inside">
-      <form id="x-demo-content-form" method="post">
-        <?php wp_nonce_field( 'x-addons-demo-content' ); ?>
-        <div class="controls">
-          <div class="control full">
-            <h3>Demo Content</h3>
-            <p>Select which demo content you would like to use on your website. This will setup the Customizer settings for that demo.</p>
-            <select name="demo" id="demo">
-              <?php
-
-              foreach ( $data as $key => $info ) {
-                echo '<option value="' . $key . '">' . $info['title'] . '</option>';
-              }
-
-              ?>
-            </select>
-            <p><a href="//theme.co/x/demo/integrity/1/" id="demo-content-link" target="_blank">Online Demo</a></p>
-          </div>
-        </div>
-        <div class="controls">
-          <div class="control">
-            <h3>Import Posts</h3>
-            <p>Include posts with your demo setup to see how various features work.</p>
-            <fieldset>
-              <legend class="screen-reader-text"><span>input type="radio"</span></legend>
-              <label class="radio-label"><input type="radio" class="radio" name="posts" value="yes"> <span><?php _e( 'Yes', '__x__' ); ?></span></label>
-              <label class="radio-label"><input type="radio" class="radio" name="posts" value="no" checked="checked"> <span><?php _e( 'No', '__x__' ); ?></span></label>
-            </fieldset>
-          </div>
-          <div class="control">
-            <h3>Import Portfolio Items</h3>
-            <p>Include portfolio items with your demo setup to see how various features work.</p>
-            <fieldset>
-              <legend class="screen-reader-text"><span>input type="radio"</span></legend>
-              <label class="radio-label"><input type="radio" class="radio" name="portfolio-items" value="yes"> <span><?php _e( 'Yes', '__x__' ); ?></span></label>
-              <label class="radio-label"><input type="radio" class="radio" name="portfolio-items" value="no" checked="checked"> <span><?php _e( 'No', '__x__' ); ?></span></label>
-            </fieldset>
-          </div>
-        </div>
-        <p class="submit">
-          <input type="submit" name="setup" id="x-addons-demo-content-submit" class="button button-primary" value="Setup Demo Content">
-        </p>
-      </form>
-    </div>
-  </div>
-
-  <script>
-
-    jQuery(document).ready(function($) {
-
-      $('.x-addons-postbox.demo-content').prepend('<div id="demo-message" class="message"><span>You demo content is being setup.</span></div>');
-
-      $('#demo').change(function() {
-        var optVal  = $(this).val();
-        var stack   = optVal.split('-').shift();
-        var number  = optVal.split('-').pop();
-        var newHref = '//theme.co/x/demo/' + stack + '/' + number + '/';
-        $('#demo-content-link').attr('href', newHref);
-      });
-
-      $('form').on('submit', function(e) {
-
-        e.preventDefault();
-
-
-        //
-        // Only run setup if confirmed.
-        //
-
-        xAdminConfirm('error', 'Installing demo content will not alter any of your pages or posts, but it will overwrite your Customizer settings. This is not reversible unless you have previously made a backup of your settings. Are you sure you want to proceed?', function() {
-
-          //
-          // 1. Reveal the status message.
-          // 2. Disable button.
-          // 3. Run setup.
-          //
-
-          $('#demo-message').fadeIn(250);                            // 1
-          $('#x-addons-demo-content-submit').attr('disabled', true); // 2
-          run_setup();                                               // 3
-
-        });
-
-
-        //
-        // Place for button state changes, et cetera.
-        //
-
-        url_params = {
-          'action'          : 'x_demo_content_setup',
-          'demo'            : $('#demo').val(),
-          'homepage-markup' : $('#x-demo-content-form input[name="homepage-markup"]:checked').val(),
-          'posts'           : $('#x-demo-content-form input[name="posts"]:checked').val(),
-          'portfolio-items' : $('#x-demo-content-form input[name="portfolio-items"]:checked').val(),
-        };
-
-        var ajax_url = "<?php echo admin_url( 'admin-ajax.php' ); ?>?" + $.param(url_params);
-
-        formFeedback = function( newMessage, dataSuccess ) {
-
-          var alertMessage = $('#demo-message');
-
-          alertMessage.html(newMessage);
-
-          if ( dataSuccess === true ) {
-
-            setTimeout(function() {
-              alertMessage.fadeOut(250);
-            }, 1500);
-
-            setTimeout(function() {
-              alertMessage.html('<span>Your demo content is being setup.</span>');
-              $('#x-addons-demo-content-submit').removeAttr('disabled');
-            }, 2000);
-
-          }
-
-        };
-
-        run_setup = function() {
-
-          $.getJSON(ajax_url, function(data) {
-
-            if ( data.result === 'success' ) {
-
-              formFeedback('<span>All done. Have fun!</span>', true);
-
-            } else if ( data.result === 'error' ) {
-
-              //
-              // Display error message and log connection errors to console
-              // for troubleshooting.
-              //
-
-              console.log(data);
-
-            }
-
-          }).fail(function(data) {
-
-            //
-            // Auto failover. No valid JSON response could mean a timeout
-            // during thumbnail generation. This will run the setup again,
-            // skipping completed sections.
-            //
-
-            formFeedback('<span>Hang in there, we\'re almost done...</span>', false);
-
-            console.log(data);
-
-            run_setup();
-
-          });
-
-        };
-
-      });
-
-    });
-
-  </script>
-
-  <?php
-
-  endif;
+  return $data;
 
 }

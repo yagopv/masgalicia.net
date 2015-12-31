@@ -94,7 +94,8 @@
 .button.x-addons-home-register-button {
   display: block;
   height: 64px;
-  max-width: 400px;
+  max-width: 300px;
+  margin: 0 auto;
   margin: 65px auto;
   padding: 0;
   font-size: 28px;
@@ -115,7 +116,8 @@
     float: none;
     display: block;
     width: 100%;
-    margin: 30px 0 0;
+    max-width: 225px;
+    margin: 30px auto 0;
     padding: 25px 0;
   }
 }
@@ -196,17 +198,11 @@
 */
 
 .x-addons-extension {
-  border: 1px solid #e5e5e5;
+  border: 5px solid #c5c5c5;
   background-color: #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-div.x-addons-extension {
-  width: 100%;
-  margin: 0 auto 20px;
 }
 
 li.x-addons-extension {
@@ -309,7 +305,7 @@ div.x-addons-extension .desc {
 // Responsive styles.
 */
 
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
   li.x-addons-extension {
     width: calc(50% - 10px);
     margin: 0 20px 20px 0;
@@ -343,7 +339,8 @@ div.x-addons-extension .desc {
   div.x-addons-extension {
     float: none;
     width: 100%;
-    margin: 0 0 10px;
+    max-width: 450px;
+    margin: 0 auto 10px;
   }
 
   li.x-addons-extension:nth-child(2n+1),
@@ -491,11 +488,7 @@ div.x-addons-extension .desc {
 // Page specific styles - demo content.
 */
 
-/*
-// New - uncomment when expanded demos are released.
-*/
-
-/*.x-addons-postbox.demo-content {
+.x-addons-postbox.demo-content {
   float: none;
   width: 100%;
   max-width: 800px;
@@ -653,104 +646,22 @@ div.x-addons-extension .desc {
   padding: 15px 0 16px;
   text-align: center;
   background-color: #fafafa;
-}*/
-
-.x-addons-postbox.demo-content {
-  float: none;
-  width: 100%;
-  max-width: 575px;
-  margin: 0 auto;
-  position: relative;
 }
 
-.x-addons-postbox.demo-content .inside {
-  padding: 0;
-}
-
-.x-addons-postbox.demo-content .controls {
-  display: table;
-  width: 100%;
-}
-
-.x-addons-postbox.demo-content .controls .control {
-  display: table-cell;
-  width: 50%;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 23px 25px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.x-addons-postbox.demo-content .controls .control:first-child {
-  border-right: 1px solid #e5e5e5;
-}
-
-.x-addons-postbox.demo-content .controls .control.full {
-  width: 100%;
-  border-right: 0;
-}
-
-.x-addons-postbox.demo-content h3 {
-  margin: 0;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.x-addons-postbox.demo-content h3 + p {
-  margin: 7px 0 15px;
-  font-size: 12px;
-}
-
-.x-addons-postbox.demo-content select {
-  width: 100%;
-  margin: 0;
-}
-
-.x-addons-postbox.demo-content select + p {
-  margin: 15px 0 0;
-}
-
-.x-addons-postbox.demo-content .radio-label {
-  display: block;
-  margin: 0 0 5px;
-}
-
-.x-addons-postbox.demo-content .radio-label:last-child {
-  margin: 0;
-}
-
-.x-addons-postbox.demo-content p.submit {
-  padding: 15px 0 16px;
+.x-addons-postbox.demo-content + .troubleshooting p {
+  margin: 25px auto -10px;
+  max-width: 500px;
+  font-size: 11px;
   text-align: center;
-  background-color: #fafafa;
+  color: #b5b5b5;
 }
 
-.x-addons-postbox.demo-content .message {
-  display: none;
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  right: 25px;
-  margin: 0 auto;
-  max-width: 300px;
-  padding: 25px;
-  font-size: 16px;
-  font-weight: 300;
-  text-align: center;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.9);
-  border-radius: 4px;
+.x-addons-postbox.demo-content + .troubleshooting a {
+  color: #b5b5b5;
 }
 
-.x-addons-postbox.demo-content .message span {
-  display: block;
-  margin-bottom: 16px;
-  line-height: 1.4;
-}
-
-.x-addons-postbox.demo-content .message span:last-child {
-  margin-bottom: 0;
+.x-addons-postbox.demo-content + .troubleshooting a:hover {
+  color: #545454;
 }
 
 
@@ -776,11 +687,7 @@ div.x-addons-extension .desc {
   // Page specific styles - demo content.
   */
 
-  /*
-  // New - uncomment when expanded demos are released.
-  */
-
-  /*.x-addons-postbox.demo-content .content {
+  .x-addons-postbox.demo-content .content {
     display: block;
     width: 100%;
   }
@@ -805,7 +712,7 @@ div.x-addons-extension .desc {
 
   .x-addons-postbox.demo-content .demo-content-link:after {
     line-height: 34px;
-  }*/
+  }
 }
 
 

@@ -16,7 +16,8 @@
 // -----------------------------------------------------------------------------
 //   01. Set Path
 //   02. Require Files
-//   03. Remove Unused Sections and Controls
+//   03. Update Native Customizer Functionality
+//   04. Overwrite Cached Options During Customizer Preview
 // =============================================================================
 
 // Set Path
@@ -38,10 +39,10 @@ require_once( $cstm_path . '/preloader.php' );
 
 
 
-// Remove Unused Sections and Controls
+// Update Native Customizer Functionality
 // =============================================================================
 
-function x_remove_customizer_sections( $wp_customize ) {
+function x_update_native_customizer_functionality( $wp_customize ) {
 
   $wp_customize->remove_section( 'nav' );
   $wp_customize->remove_section( 'colors' );
@@ -55,6 +56,26 @@ function x_remove_customizer_sections( $wp_customize ) {
   $wp_customize->remove_control( 'nav_menu_locations[primary]' );
   $wp_customize->remove_control( 'nav_menu_locations[footer]' );
 
+  // if ( $wp_customize->get_control( 'site_icon' ) ) {
+  //   $wp_customize->get_control( 'site_icon' )->section     = 'x_customizer_section_social';
+  //   $wp_customize->get_control( 'site_icon' )->priority    = '1000';
+  //   $wp_customize->get_control( 'site_icon' )->description = '';
+  // }
+
 }
 
-add_action( 'customize_register', 'x_remove_customizer_sections' );
+add_action( 'customize_register', 'x_update_native_customizer_functionality' );
+
+
+
+// Overwrite Cached Options During Customizer Preview
+// =============================================================================
+
+function x_inject_customizer_preview_options() {
+
+  add_filter( 'pre_option_x_cache_customizer_css', 'x_customizer_get_css' );
+  add_filter( 'pre_option_x_cache_google_fonts_request', 'x_get_google_fonts_request' );
+
+}
+
+add_action( 'customize_preview_init', 'x_inject_customizer_preview_options' );

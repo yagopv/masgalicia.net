@@ -544,6 +544,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -551,6 +552,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -558,6 +560,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -584,6 +587,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'size',
             'heading'     => __( 'Size', '__x__' ),
             'description' => __( 'Enter in the size of your gap. Pixels, ems, and percentages are all valid units of measurement.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '1.313em'
@@ -592,6 +596,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -599,6 +604,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -606,6 +612,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -632,6 +639,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -639,6 +647,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -646,72 +655,13 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
         )
       )
     );
-
-
-    // //
-    // // Highlight.
-    // //
-
-    // vc_map(
-    //   array(
-    //     'base'        => 'highlight',
-    //     'name'        => __( 'Highlight', '__x__' ),
-    //     'weight'      => 750,
-    //     'class'       => 'x-content-element x-content-element-highlight',
-    //     'icon'        => 'highlight',
-    //     'category'    => __( 'Typography', '__x__' ),
-    //     'description' => __( 'Highlight a selection of important text', '__x__' ),
-    //     'params'      => array(
-    //       array(
-    //         'param_name'  => 'content',
-    //         'heading'     => __( 'Text', '__x__' ),
-    //         'description' => __( 'Enter your text.', '__x__' ),
-    //         'type'        => 'textarea_html',
-    //         'holder'      => 'div',
-    //         'value'       => ''
-    //       ),
-    //       array(
-    //         'param_name'  => 'type',
-    //         'heading'     => __( 'Type', '__x__' ),
-    //         'description' => __( 'Select the highlight style.', '__x__' ),
-    //         'type'        => 'dropdown',
-    //         'holder'      => 'div',
-    //         'value'       => array(
-    //           '- Select Option -' => '',
-    //           'Standard'          => 'standard',
-    //           'Dark'              => 'dark'
-    //         )
-    //       ),
-    //       array(
-    //         'param_name'  => 'id',
-    //         'heading'     => __( 'ID', '__x__' ),
-    //         'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'class',
-    //         'heading'     => __( 'Class', '__x__' ),
-    //         'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'style',
-    //         'heading'     => __( 'Style', '__x__' ),
-    //         'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       )
-    //     )
-    //   )
-    // );
 
 
     //
@@ -732,6 +682,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -740,6 +691,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'cite',
             'heading'     => __( 'Cite', '__x__' ),
             'description' => __( 'Cite the person you are quoting.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -760,6 +712,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -767,6 +720,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -774,6 +728,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -800,6 +755,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -808,6 +764,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'cite',
             'heading'     => __( 'Cite', '__x__' ),
             'description' => __( 'Cite the person you are quoting.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -827,6 +784,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -834,6 +792,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -841,6 +800,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -867,6 +827,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -875,6 +836,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'heading',
             'heading'     => __( 'Heading', '__x__' ),
             'description' => __( 'Enter the heading of your alert.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -907,6 +869,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -914,6 +877,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -921,6 +885,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -947,6 +912,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Code (See Notes Below)', '__x__' ),
             'description' => __( 'Switch to the "text" editor and do not place anything else here other than your &lsaquo;iframe&rsaquo; or &lsaquo;embed&rsaquo; code.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -965,6 +931,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -972,6 +939,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -979,6 +947,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1008,6 +977,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'lat',
             'heading'     => __( 'Latitude', '__x__' ),
             'description' => __( 'Enter in the center latitude of your map.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1015,6 +985,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'lng',
             'heading'     => __( 'Longitude', '__x__' ),
             'description' => __( 'Enter in the center longitude of your map.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1032,6 +1003,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'zoom',
             'heading'     => __( 'Zoom Level', '__x__' ),
             'description' => __( 'Choose the initial zoom level of your map. This value should be between 1 and 18. 1 is fully zoomed out and 18 is right at street level.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1049,6 +1021,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'height',
             'heading'     => __( 'Height', '__x__' ),
             'description' => __( 'Choose an optional height for your map. If no height is selected, a responsive, proportional unit will be used. Any type of unit is acceptable (e.g. 450px, 30em, 40%, et cetera).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1073,6 +1046,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1080,6 +1054,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1108,6 +1083,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'lat',
             'heading'     => __( 'Latitude', '__x__' ),
             'description' => __( 'Enter in the latitude of your marker.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1115,6 +1091,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'lng',
             'heading'     => __( 'Longitude', '__x__' ),
             'description' => __( 'Enter in the longitude of your marker.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1122,6 +1099,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'info',
             'heading'     => __( 'Additional Information', '__x__' ),
             'description' => __( 'Optional description text to appear in a popup when your marker is clicked on.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1155,6 +1133,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'heading',
             'heading'     => __( 'Heading', '__x__' ),
             'description' => __( 'Enter the heading of your skill bar.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1162,6 +1141,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'percent',
             'heading'     => __( 'Percent', '__x__' ),
             'description' => __( 'Enter the percentage of your skill and be sure to include the percentage sign (i.e. 90%).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1169,6 +1149,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'bar_text',
             'heading'     => __( 'Bar Text', '__x__' ),
             'description' => __( 'Enter in some alternate text in place of the percentage inside the skill bar.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1176,6 +1157,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1183,6 +1165,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1190,6 +1173,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -1216,6 +1200,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -1224,6 +1209,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1231,6 +1217,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1238,6 +1225,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -1264,6 +1252,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -1344,6 +1333,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'href',
             'heading'     => __( 'Href', '__x__' ),
             'description' => __( 'Enter in the URL you want your button to link to.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1351,6 +1341,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Enter in the title attribute you want for your button (will also double as title for popover or tooltip if you have chosen to display one).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1408,6 +1399,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'info_content',
             'heading'     => __( 'Info Content', '__x__' ),
             'description' => __( 'Extra content for the popover.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1432,6 +1424,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'lightbox_caption',
             'heading'     => __( 'Lightbox Caption', '__x__' ),
             'description' => __( 'Lightbox caption text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1439,6 +1432,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1446,6 +1440,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1453,60 +1448,13 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
         )
       )
     );
-
-
-    // //
-    // // Icons.
-    // //
-
-    // vc_map(
-    //   array(
-    //     'base'        => 'icon',
-    //     'name'        => __( 'Icon', '__x__' ),
-    //     'weight'      => 790,
-    //     'class'       => 'x-content-element x-content-element-icon',
-    //     'icon'        => 'icon',
-    //     'category'    => __( 'Typography', '__x__' ),
-    //     'description' => __( 'Include a Font Awesome icon in your content', '__x__' ),
-    //     'params'      => array(
-    //       array(
-    //         'param_name'  => 'type',
-    //         'heading'     => __( 'Type', '__x__' ),
-    //         'description' => __( 'Select your icon.', '__x__' ),
-    //         'type'        => 'dropdown',
-    //         'holder'      => 'div',
-    //         'value'       => $param_icon_value
-    //       ),
-    //       array(
-    //         'param_name'  => 'id',
-    //         'heading'     => __( 'ID', '__x__' ),
-    //         'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'class',
-    //         'heading'     => __( 'Class', '__x__' ),
-    //         'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'style',
-    //         'heading'     => __( 'Style', '__x__' ),
-    //         'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       )
-    //     )
-    //   )
-    // );
 
 
     //
@@ -1543,6 +1491,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1550,6 +1499,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1557,6 +1507,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -1585,6 +1536,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -1593,6 +1545,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1600,6 +1553,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1607,6 +1561,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -1667,6 +1622,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'alt',
             'heading'     => __( 'Alt', '__x__' ),
             'description' => __( 'Enter in the alt text for your image.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1684,6 +1640,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'href',
             'heading'     => __( 'Href', '__x__' ),
             'description' => __( 'Enter in the URL you want your image to link to. If using this image for a lightbox, enter the URL of your media here (e.g. YouTube embed URL, et cetera). Leave this field blank if you want to link to the image uploaded to the "Src" for your lightbox.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1691,6 +1648,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Enter in the title attribute you want for your image (will also double as title for popover or tooltip if you have chosen to display one).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1748,6 +1706,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'info_content',
             'heading'     => __( 'Info Content', '__x__' ),
             'description' => __( 'Extra content for the popover.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1772,6 +1731,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'lightbox_caption',
             'heading'     => __( 'Lightbox Caption', '__x__' ),
             'description' => __( 'Lightbox caption text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1779,6 +1739,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1786,6 +1747,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1793,6 +1755,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -1822,6 +1785,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1829,6 +1793,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1836,6 +1801,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -1864,6 +1830,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -1880,6 +1847,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1887,6 +1855,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -1894,129 +1863,13 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
         )
       )
     );
-
-
-    // //
-    // // Popovers and Tooltips.
-    // //
-
-    // vc_map(
-    //   array(
-    //     'base'        => 'info',
-    //     'name'        => __( 'Info', '__x__' ),
-    //     'weight'      => 660,
-    //     'class'       => 'x-content-element x-content-element-info',
-    //     'icon'        => 'info',
-    //     'category'    => __( 'Information', '__x__' ),
-    //     'description' => __( 'Include a popover or tooltip in your content', '__x__' ),
-    //     'params'      => array(
-    //       array(
-    //         'param_name'  => 'content',
-    //         'heading'     => __( 'Text', '__x__' ),
-    //         'description' => __( 'Enter your text.', '__x__' ),
-    //         'type'        => 'textarea_html',
-    //         'holder'      => 'div',
-    //         'value'       => ''
-    //       ),
-    //       array(
-    //         'param_name'  => 'href',
-    //         'heading'     => __( 'Href', '__x__' ),
-    //         'description' => __( 'Enter in the URL you want to link to.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'title',
-    //         'heading'     => __( 'Title', '__x__' ),
-    //         'description' => __( 'Enter in the title you want to use', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'target',
-    //         'heading'     => __( 'Target', '__x__' ),
-    //         'description' => __( 'Select to open your link in a new window.', '__x__' ),
-    //         'type'        => 'checkbox',
-    //         'holder'      => 'div',
-    //         'value'       => array(
-    //           '' => 'blank'
-    //         )
-    //       ),
-    //       array(
-    //         'param_name'  => 'info',
-    //         'heading'     => __( 'Info', '__x__' ),
-    //         'description' => __( 'Select whether or not you want to use a popover or tooltip.', '__x__' ),
-    //         'type'        => 'dropdown',
-    //         'holder'      => 'div',
-    //         'value'       => array(
-    //           '- Select Option -' => '',
-    //           'Popover'           => 'popover',
-    //           'Tooltip'           => 'tooltip'
-    //         )
-    //       ),
-    //       array(
-    //         'param_name'  => 'info_place',
-    //         'heading'     => __( 'Info Placement', '__x__' ),
-    //         'description' => __( 'Select where you want your popover or tooltip to appear.', '__x__' ),
-    //         'type'        => 'dropdown',
-    //         'holder'      => 'div',
-    //         'value'       => array(
-    //           '- Select Option -' => '',
-    //           'Hover'             => 'hover',
-    //           'Click'             => 'click',
-    //           'Focus'             => 'focus'
-    //         )
-    //       ),
-    //       array(
-    //         'param_name'  => 'info_trigger',
-    //         'heading'     => __( 'Info Trigger', '__x__' ),
-    //         'description' => __( 'Select what actions you want to trigger the popover or tooltip.', '__x__' ),
-    //         'type'        => 'dropdown',
-    //         'holder'      => 'div',
-    //         'value'       => array(
-    //           '- Select Option -' => '',
-    //           'Hover'             => 'hover',
-    //           'Click'             => 'click',
-    //           'Focus'             => 'focus'
-    //         )
-    //       ),
-    //       array(
-    //         'param_name'  => 'info_content',
-    //         'heading'     => __( 'Info Content', '__x__' ),
-    //         'description' => __( 'Extra content for the popover.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'id',
-    //         'heading'     => __( 'ID', '__x__' ),
-    //         'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'class',
-    //         'heading'     => __( 'Class', '__x__' ),
-    //         'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'style',
-    //         'heading'     => __( 'Style', '__x__' ),
-    //         'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       )
-    //     )
-    //   )
-    // );
 
 
     //
@@ -2037,6 +1890,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -2045,6 +1899,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2052,6 +1907,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2059,6 +1915,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2100,6 +1957,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'm4v',
             'heading'     => __( 'M4V', '__x__' ),
             'description' => __( 'Include and .m4v version of your video.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2107,6 +1965,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'ogv',
             'heading'     => __( 'OGV', '__x__' ),
             'description' => __( 'Include and .ogv version of your video for additional native browser support.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2161,6 +2020,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2168,6 +2028,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2175,6 +2036,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2201,6 +2063,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Code (See Notes Below)', '__x__' ),
             'description' => __( 'Switch to the "text" editor and do not place anything else here other than your &lsaquo;iframe&rsaquo; or &lsaquo;embed&rsaquo; code.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -2234,6 +2097,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2241,6 +2105,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2248,6 +2113,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2277,6 +2143,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2284,6 +2151,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2291,6 +2159,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2319,6 +2188,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -2327,6 +2197,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'parent_id',
             'heading'     => __( 'Parent ID', '__x__' ),
             'description' => __( 'Optionally include an ID given to the parent accordion to only allow one toggle to be open at a time.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2334,6 +2205,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Include a title for your accordion item.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2351,6 +2223,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2358,6 +2231,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2365,6 +2239,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2421,6 +2296,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2428,6 +2304,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2435,6 +2312,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2463,6 +2341,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Include a title for your tab nav item.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2480,6 +2359,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2487,6 +2367,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2494,6 +2375,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2523,6 +2405,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2530,6 +2413,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2537,6 +2421,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2565,6 +2450,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -2583,6 +2469,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2590,6 +2477,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2635,6 +2523,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2642,6 +2531,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2649,6 +2539,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2690,6 +2581,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'slide_time',
             'heading'     => __( 'Slide Time', '__x__' ),
             'description' => __( 'The amount of time a slide will stay visible in milliseconds.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '5000'
@@ -2698,6 +2590,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'slide_speed',
             'heading'     => __( 'Slide Speed', '__x__' ),
             'description' => __( 'The amount of time to transition between slides in milliseconds.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '650'
@@ -2756,6 +2649,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2763,6 +2657,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2770,6 +2665,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2798,6 +2694,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -2806,6 +2703,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2813,6 +2711,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2820,6 +2719,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2846,6 +2746,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -2854,6 +2755,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2861,6 +2763,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2868,6 +2771,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -2920,6 +2824,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'offset',
             'heading'     => __( 'Offset', '__x__' ),
             'description' => __( 'Enter a number to offset initial starting post of your recent posts.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2927,6 +2832,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'category',
             'heading'     => __( 'Category', '__x__' ),
             'description' => __( 'To filter your posts by category, enter in the slug of your desired category. To filter by multiple categories, enter in your slugs separated by a comma.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2966,6 +2872,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2973,6 +2880,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -2980,6 +2888,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3006,6 +2915,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'mp3',
             'heading'     => __( 'MP3', '__x__' ),
             'description' => __( 'Include and .mp3 version of your audio.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3013,6 +2923,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'oga',
             'heading'     => __( 'OGA', '__x__' ),
             'description' => __( 'Include and .oga version of your audio for additional native browser support.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3030,6 +2941,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3037,6 +2949,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3044,6 +2957,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3070,6 +2984,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Code (See Notes Below)', '__x__' ),
             'description' => __( 'Switch to the "text" editor and do not place anything else here other than your &lsaquo;iframe&rsaquo; or &lsaquo;embed&rsaquo; code.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -3078,6 +2993,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3085,6 +3001,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3092,6 +3009,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3136,6 +3054,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3143,6 +3062,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3150,6 +3070,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3178,6 +3099,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -3186,6 +3108,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Include a title for your pricing column.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3203,6 +3126,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'featured_sub',
             'heading'     => __( 'Featured Sub Heading', '__x__' ),
             'description' => __( 'Include a sub heading for your featured column.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3210,6 +3134,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'currency',
             'heading'     => __( 'Currency Symbol', '__x__' ),
             'description' => __( 'Enter in the currency symbol you want to use.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3217,6 +3142,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'price',
             'heading'     => __( 'Price', '__x__' ),
             'description' => __( 'Enter in the price for this pricing column.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3224,6 +3150,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'interval',
             'heading'     => __( 'Interval', '__x__' ),
             'description' => __( 'Enter in the time period that this pricing column is for.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => 'Per Month'
@@ -3232,6 +3159,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3239,6 +3167,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3246,6 +3175,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3285,6 +3215,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Enter the title for your callout.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3292,6 +3223,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'message',
             'heading'     => __( 'Message', '__x__' ),
             'description' => __( 'Enter the message for your callout.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea',
             'holder'      => 'div'
           ),
@@ -3299,6 +3231,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'button_text',
             'heading'     => __( 'Button Text', '__x__' ),
             'description' => __( 'Enter the text for your callout button.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3324,6 +3257,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'href',
             'heading'     => __( 'Href', '__x__' ),
             'description' => __( 'Enter in the URL you want your callout button to link to.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3341,6 +3275,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3348,6 +3283,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3355,6 +3291,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3381,6 +3318,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -3396,6 +3334,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'alt',
             'heading'     => __( 'Alt', '__x__' ),
             'description' => __( 'Enter in the alt text for your promo image.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3403,6 +3342,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3410,6 +3350,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3417,6 +3358,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3443,6 +3385,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'selector',
             'heading'     => __( 'Selector', '__x__' ),
             'description' => __( 'Enter in the selector for your images (e.g. if your class is "lightbox-img" enter ".lightbox-img"). Set to ".x-img-link" to automatically setup a lightbox for all linked [image] shortcodes on your page.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '.x-img-link'
@@ -3461,6 +3404,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'opacity',
             'heading'     => __( 'Backdrop Opacity', '__x__' ),
             'description' => __( 'Enter in the opacity for the backdrop (valid inputs are numbers 0 to 1).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '0.875'
@@ -3469,6 +3413,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'prev_scale',
             'heading'     => __( 'Previous Item Scale', '__x__' ),
             'description' => __( 'Enter in the scale for the previous item (valid inputs are numbers 0 to 1).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '0.75'
@@ -3477,6 +3422,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'prev_opacity',
             'heading'     => __( 'Previous Item Opacity', '__x__' ),
             'description' => __( 'Enter in the opacity for the previous item (valid inputs are numbers 0 to 1).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '0.75'
@@ -3485,6 +3431,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'next_scale',
             'heading'     => __( 'Next Item Scale', '__x__' ),
             'description' => __( 'Enter in the scale for the next item (valid inputs are numbers 0 to 1).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '0.75'
@@ -3493,6 +3440,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'next_opacity',
             'heading'     => __( 'Next Item Opacity', '__x__' ),
             'description' => __( 'Enter in the opacity for the next item (valid inputs are numbers 0 to 1).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '0.75'
@@ -3542,6 +3490,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3549,6 +3498,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3556,6 +3506,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3563,6 +3514,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Enter in a title for your author information.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => 'About the Author'
@@ -3571,6 +3523,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'author_id',
             'heading'     => __( 'Author ID', '__x__' ),
             'description' => __( 'By default the author of the post or page will be output by leaving this input blank. If you would like to output the information of another author, enter in their user ID here.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3609,6 +3562,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Enter the title for your prompt.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3616,6 +3570,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'message',
             'heading'     => __( 'Message', '__x__' ),
             'description' => __( 'Enter the message for your prompt.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea',
             'holder'      => 'div'
           ),
@@ -3623,6 +3578,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'button_text',
             'heading'     => __( 'Button Text', '__x__' ),
             'description' => __( 'Enter the text for your prompt button.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3648,6 +3604,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'href',
             'heading'     => __( 'Href', '__x__' ),
             'description' => __( 'Enter in the URL you want your prompt button to link to.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3665,6 +3622,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3672,6 +3630,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3679,6 +3638,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3705,6 +3665,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Enter in a title for your social links.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => 'Share this Post'
@@ -3783,6 +3744,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3790,6 +3752,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3797,6 +3760,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3826,6 +3790,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Set the title of the table of contents.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => 'Table of Contents'
@@ -3860,6 +3825,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3867,6 +3833,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3874,6 +3841,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3902,6 +3870,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'title',
             'heading'     => __( 'Title', '__x__' ),
             'description' => __( 'Set the title of the table of contents item.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3909,6 +3878,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'page',
             'heading'     => __( 'Page', '__x__' ),
             'description' => __( 'Set the page of the table of contents item.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3916,6 +3886,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3923,6 +3894,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -3930,6 +3902,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -3956,6 +3929,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -4019,6 +3993,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4026,6 +4001,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4033,60 +4009,13 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
         )
       )
     );
-
-
-    // //
-    // // Social icons.
-    // //
-
-    // vc_map(
-    //   array(
-    //     'base'        => 'social',
-    //     'name'        => __( 'Social Icon', '__x__' ),
-    //     'weight'      => 760,
-    //     'class'       => 'x-content-element x-content-element-social',
-    //     'icon'        => 'social',
-    //     'category'    => __( 'Typography', '__x__' ),
-    //     'description' => __( 'Include a Foundation Social icon in your content', '__x__' ),
-    //     'params'      => array(
-    //       array(
-    //         'param_name'  => 'type',
-    //         'heading'     => __( 'Type', '__x__' ),
-    //         'description' => __( 'Select your icon.', '__x__' ),
-    //         'type'        => 'dropdown',
-    //         'holder'      => 'div',
-    //         'value'       => $param_social_icon_value
-    //       ),
-    //       array(
-    //         'param_name'  => 'id',
-    //         'heading'     => __( 'ID', '__x__' ),
-    //         'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'class',
-    //         'heading'     => __( 'Class', '__x__' ),
-    //         'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       ),
-    //       array(
-    //         'param_name'  => 'style',
-    //         'heading'     => __( 'Style', '__x__' ),
-    //         'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
-    //         'type'        => 'textfield',
-    //         'holder'      => 'div'
-    //       )
-    //     )
-    //   )
-    // );
 
 
     //
@@ -4110,6 +4039,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4117,6 +4047,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4124,6 +4055,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -4150,6 +4082,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -4211,6 +4144,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4218,6 +4152,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4225,6 +4160,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -4251,6 +4187,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'selector',
             'heading'     => __( 'Selector', '__x__' ),
             'description' => __( 'Enter in the selector for your responsive text (e.g. if your class is "h-responsive" enter ".h-responsive").', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
           ),
@@ -4258,6 +4195,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'compression',
             'heading'     => __( 'Compression', '__x__' ),
             'description' => __( 'Enter the compression for your responsive text (adjust up and down to desired level in small increments).', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '1.0'
@@ -4266,6 +4204,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'min_size',
             'heading'     => __( 'Minimum Size', '__x__' ),
             'description' => __( 'Enter the minimum size of your responsive text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4273,6 +4212,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'max_size',
             'heading'     => __( 'Maximum Size', '__x__' ),
             'description' => __( 'Enter the maximum size of your responsive text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -4299,6 +4239,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4306,6 +4247,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4313,6 +4255,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -4339,6 +4282,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'num_start',
             'heading'     => __( 'Starting Number', '__x__' ),
             'description' => __( 'Enter in the number that you would like your counter to start from.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '0'
@@ -4347,6 +4291,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'num_end',
             'heading'     => __( 'Ending Number', '__x__' ),
             'description' => __( 'Enter int he number that you would like your counter to end at. This must be higher than your starting number.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '100'
@@ -4355,6 +4300,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'num_speed',
             'heading'     => __( 'Counter Speed', '__x__' ),
             'description' => __( 'The amount of time to transition between numbers in milliseconds.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div',
             'value'       => '1500'
@@ -4363,6 +4309,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'num_prefix',
             'heading'     => __( 'Number Prefix', '__x__' ),
             'description' => __( 'Prefix your number with a symbol or text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4370,6 +4317,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'num_suffix',
             'heading'     => __( 'Number Suffix', '__x__' ),
             'description' => __( 'Suffix your number with a symbol or text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4384,6 +4332,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'text_above',
             'heading'     => __( 'Text Above', '__x__' ),
             'description' => __( 'Optionally include text above your number.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4391,6 +4340,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'text_below',
             'heading'     => __( 'Text Below', '__x__' ),
             'description' => __( 'Optionally include text below your number.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4405,6 +4355,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'id',
             'heading'     => __( 'ID', '__x__' ),
             'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4412,6 +4363,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'class',
             'heading'     => __( 'Class', '__x__' ),
             'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           ),
@@ -4419,6 +4371,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'style',
             'heading'     => __( 'Style', '__x__' ),
             'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textfield',
             'holder'      => 'div'
           )
@@ -4445,6 +4398,7 @@ if ( ! function_exists( 'x_visual_composer_map_shortcodes' ) && x_visual_compose
             'param_name'  => 'content',
             'heading'     => __( 'Text', '__x__' ),
             'description' => __( 'Enter your text.', '__x__' ),
+            'save_always' => true,
             'type'        => 'textarea_html',
             'holder'      => 'div',
             'value'       => ''
@@ -4558,6 +4512,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'padding_top',
       'heading'     => __( 'Padding Top', '__x__' ),
       'description' => __( 'Set the top padding of the content band (leave blank to keep default).', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div',
       'value'       => '0px'
@@ -4567,6 +4522,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'padding_bottom',
       'heading'     => __( 'Padding Bottom', '__x__' ),
       'description' => __( 'Set the bottom padding of the content band (leave blank to keep default).', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div',
       'value'       => '0px'
@@ -4630,6 +4586,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'bg_video',
       'heading'     => __( 'Background Video', '__x__' ),
       'description' => __( 'Include the path to your background video (this will overwrite both your Background Pattern and Background Image).', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4657,6 +4614,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'class',
       'heading'     => __( 'Class', '__x__' ),
       'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4665,6 +4623,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'style',
       'heading'     => __( 'Style', '__x__' ),
       'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4714,6 +4673,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'padding_top',
       'heading'     => __( 'Padding Top', '__x__' ),
       'description' => __( 'Set the top padding of the content band (leave blank to keep default).', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div',
       'value'       => '0px'
@@ -4723,6 +4683,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'padding_bottom',
       'heading'     => __( 'Padding Bottom', '__x__' ),
       'description' => __( 'Set the bottom padding of the content band (leave blank to keep default).', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div',
       'value'       => '0px'
@@ -4786,6 +4747,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'bg_video',
       'heading'     => __( 'Background Video', '__x__' ),
       'description' => __( 'Include the path to your background video (this will overwrite both your Background Pattern and Background Image).', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4813,6 +4775,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'class',
       'heading'     => __( 'Class', '__x__' ),
       'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4821,6 +4784,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'style',
       'heading'     => __( 'Style', '__x__' ),
       'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4867,6 +4831,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'fade_animation_offset',
       'heading'     => __( 'Fade Animation Offset', '__x__' ),
       'description' => __( 'Set how large you want the offset for your fade animation to be.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div',
       'value'       => '45px'
@@ -4876,6 +4841,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'id',
       'heading'     => __( 'ID', '__x__' ),
       'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4884,6 +4850,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'class',
       'heading'     => __( 'Class', '__x__' ),
       'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4892,6 +4859,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'style',
       'heading'     => __( 'Style', '__x__' ),
       'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4937,6 +4905,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'fade_animation_offset',
       'heading'     => __( 'Fade Animation Offset', '__x__' ),
       'description' => __( 'Set how large you want the offset for your fade animation to be.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div',
       'value'       => '45px'
@@ -4946,6 +4915,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'id',
       'heading'     => __( 'ID', '__x__' ),
       'description' => __( '(Optional) Enter a unique ID.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4954,6 +4924,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'class',
       'heading'     => __( 'Class', '__x__' ),
       'description' => __( '(Optional) Enter a unique class name.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );
@@ -4962,6 +4933,7 @@ if ( ! function_exists( 'x_visual_composer_update_existing_shortcodes' ) && x_vi
       'param_name'  => 'style',
       'heading'     => __( 'Style', '__x__' ),
       'description' => __( '(Optional) Enter inline CSS.', '__x__' ),
+      'save_always' => true,
       'type'        => 'textfield',
       'holder'      => 'div'
     ) );

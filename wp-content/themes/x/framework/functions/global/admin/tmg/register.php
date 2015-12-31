@@ -1,7 +1,7 @@
 <?php
 
 // =============================================================================
-// FUNCTIONS/GLOBAL/ADMIN/TMG/REGISTRATION.PHP
+// FUNCTIONS/GLOBAL/ADMIN/TMG/REGISTER.PHP
 // -----------------------------------------------------------------------------
 // Registers the plugins to be included via the TMG Plugin Activation class.
 // =============================================================================
@@ -28,7 +28,7 @@ if ( ! function_exists( 'x_register_theme_plugins' ) ) :
       'cornerstone' => array(
         'name'               => 'Cornerstone',
         'slug'               => 'cornerstone',
-        'source'             => X_TEMPLATE_URL . '/framework/plugins/cornerstone.zip',
+        'source'             => 'cornerstone.zip',
         'required'           => true,
         'version'            => '',
         'force_activation'   => true,
@@ -44,9 +44,9 @@ if ( ! function_exists( 'x_register_theme_plugins' ) ) :
       'revslider' => array(
         'name'               => 'Slider Revolution',
         'slug'               => 'revslider',
-        'source'             => X_TEMPLATE_URL . '/framework/plugins/revslider.zip',
+        'source'             => 'revslider.zip',
         'required'           => false,
-        'version'            => '5.0.4.1',
+        'version'            => '5.1.4',
         'force_activation'   => false,
         'force_deactivation' => false,
         'external_url'       => '',
@@ -60,9 +60,9 @@ if ( ! function_exists( 'x_register_theme_plugins' ) ) :
       'js_composer' => array(
         'name'               => 'Visual Composer',
         'slug'               => 'js_composer',
-        'source'             => X_TEMPLATE_URL . '/framework/plugins/js_composer.zip',
+        'source'             => 'js_composer.zip',
         'required'           => false,
-        'version'            => '4.6.2',
+        'version'            => '4.8.1',
         'force_activation'   => false,
         'force_deactivation' => false,
         'external_url'       => '',
@@ -124,7 +124,7 @@ if ( ! function_exists( 'x_register_theme_plugins' ) ) :
 
     $config = array(
       'domain'           => '__x__',
-      'default_path'     => 'tgmpa-install-plugins',
+      'default_path'     => X_TEMPLATE_PATH . '/framework/plugins/',
       'parent_menu_slug' => 'themes.php',
       'parent_url_slug'  => 'themes.php',
       'menu'             => 'install-required-plugins',

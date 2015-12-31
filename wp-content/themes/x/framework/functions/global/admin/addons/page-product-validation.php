@@ -93,7 +93,7 @@ function x_addons_product_validation() {
         }
       }
 
-      delete_transient( 'x_addon_list_cache' );
+      delete_site_option( 'x_addon_list_cache' );
 
     }
   }

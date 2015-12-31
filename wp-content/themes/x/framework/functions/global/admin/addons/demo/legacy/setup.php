@@ -25,13 +25,6 @@
 // =============================================================================
 
 //
-// API data.
-//
-
-$data = json_decode( $request['body'], true );
-
-
-//
 // Front page.
 //
 
@@ -51,10 +44,10 @@ $front_page_cs_settings  = $data['cs-settings'];
 // Miscellaneous.
 //
 
-$customizer_settings     = $data['xcs'];
-$include_posts           = $_GET['posts'] == 'yes';
-$include_portfolio_items = $_GET['portfolio-items'] == 'yes';
-$content_url             = X_TEMPLATE_URL . '/framework/functions/global/admin/addons/demo/content';
+$customizer_settings     = is_array( $data['xcs'] ) ? $data['xcs'] : array();
+$include_posts           = $_POST['standard_posts'] == 'yes';
+$include_portfolio_items = $_POST['standard_portfolio_items'] == 'yes';
+$content_url             = X_TEMPLATE_URL . '/framework/functions/global/admin/addons/demo/standard/content';
 
 
 
@@ -95,6 +88,7 @@ if ( x_demo_content_stage_not_completed( 'xcs-import' ) ) {
 
   x_demo_content_set_stage_completed( 'xcs-import' );
 
+  x_bust_google_fonts_cache();
 }
 
 
