@@ -549,6 +549,25 @@ footer.x-colophon.bottom {
     }
 }
 
+#menu-footer {
+  margin-bottom: 5px;
+}
+
+#menu-footer-legal {
+  margin-top: 0;
+}
+
+#menu-footer-legal a {
+  font-size: 1em;
+}
+
+.x-colophon.bottom .x-colophon-content ul#menu-footer-legal.x-nav li:before {
+  content: '';
+}
+
+.x-colophon.bottom .x-colophon-content {
+  margin-top: 0;
+}
 /* Helpers */
 .reset {
     clear: left;
@@ -614,4 +633,18 @@ footer.x-colophon.bottom {
 
 .x-btn, .button, [type="submit"] {
     text-shadow: none !important;
+}
+
+/* Cookie notice */
+#cookie-notice {
+  background-color: rgba(0, 0, 0, .85) !important;
+}
+
+#cookie-notice .cookie-button {
+  border-radius: 0;
+  color: #FFF;
+  font-weight: bold;
+  border: 2px solid;
+  background: none;
+  text-shadow: none;
 }
