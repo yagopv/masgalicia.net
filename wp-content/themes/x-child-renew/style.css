@@ -640,11 +640,27 @@ footer.x-colophon.bottom {
   background-color: rgba(0, 0, 0, .85) !important;
 }
 
+#cookie-notice .cookie-notice-container {
+  text-align: left;
+}
+
 #cookie-notice .cookie-button {
+  display: block;
   border-radius: 0;
   color: #FFF;
   font-weight: bold;
   border: 2px solid;
   background: none;
   text-shadow: none;
+  margin-top: 10px;
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #cookie-notice .cookie-button {
+    display: inline-block;
+    max-width: none;
+    margin-top: 0;
+    margin-left: 15px;
+  }
 }
